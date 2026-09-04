@@ -1,0 +1,34 @@
+[
+  {
+    "name": "key-order-invariance",
+    "note": "Object key order does not affect canonical output.",
+    "input": {
+      "b": 2,
+      "a": 1,
+      "c": 3
+    },
+    "canonical_bytes_utf8": "{\"a\":1,\"b\":2,\"c\":3}"
+  },
+  {
+    "name": "insignificant-whitespace-stripped",
+    "note": "Whitespace outside string values does not appear in canonical output.",
+    "input_pretty": "{\n  \"a\": 1,\n  \"b\": 2\n}",
+    "canonical_bytes_utf8": "{\"a\":1,\"b\":2}"
+  },
+  {
+    "name": "utf8-preserved",
+    "note": "Non-ASCII characters are preserved as UTF-8, not escaped.",
+    "input": {
+      "claim": "The Louvre is in Paris \u2014 the largest art museum on Earth."
+    },
+    "canonical_bytes_utf8": "{\"claim\":\"The Louvre is in Paris \u2014 the largest art museum on Earth.\"}"
+  },
+  {
+    "name": "empty-sources-array",
+    "note": "Empty arrays canonicalize to two bytes.",
+    "input": {
+      "sources": []
+    },
+    "canonical_bytes_utf8": "{\"sources\":[]}"
+  }
+]
