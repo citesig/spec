@@ -21,6 +21,17 @@ A CiteSig-signed claim is portable: it can travel through model context, be re-q
 - Not a citation format. Existing citation styles (APA, MLA, BibTeX, JATS, schema.org `Citation`) already handle "which source." CiteSig sits **around** a claim + its sources, not inside the source list.
 - Not a proof-of-work chain. There is no CiteSig blockchain, no CiteSig token, no CiteSig network. Verification is offline and pairwise.
 
+## Reference implementations
+
+Both reference libraries are published, share the same test vectors, and produce byte-identical signatures across languages.
+
+| Language | Package | Install |
+|---|---|---|
+| JavaScript / Node | [`@citesig/core`](https://www.npmjs.com/package/@citesig/core) | `npm install @citesig/core` |
+| Python | [`citesig`](https://pypi.org/project/citesig/) | `pip install citesig` |
+
+The [CiteSig verifier browser extension](https://github.com/citesig/verifier-extension) ships a browser-friendly port of `@citesig/core` and verifies attestations offline with WebCrypto.
+
 ## Repository layout
 
 ```
